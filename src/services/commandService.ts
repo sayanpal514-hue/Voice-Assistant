@@ -95,7 +95,7 @@ export function processCommand(command: string): {
   // System Commands (Local Proxy)
   const vscodeMatch = lowerCmd.match(/^open\s+vs\s*code$/);
   if (vscodeMatch) {
-    fetch('http://localhost:3001/execute', {
+    fetch('/api/execute', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ command: 'vscode' })

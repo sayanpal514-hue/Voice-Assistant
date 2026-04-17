@@ -218,14 +218,14 @@ export class LiveSessionManager {
                   } else if (args.actionType === "music") {
                     url = `https://www.youtube.com/results?search_query=${encodeURIComponent(args.query)}`;
                   } else if (args.actionType === "vscode") {
-                    fetch('http://localhost:3001/execute', {
+                    fetch('/api/execute', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
                       body: JSON.stringify({ command: 'vscode' })
                     }).catch(e => console.error("Proxy error", e));
                     return; // No URL to open in browser
                   } else if (args.actionType === "chrome") {
-                    fetch('http://localhost:3001/execute', {
+                    fetch('/api/execute', {
                       method: 'POST',
                       headers: { 'Content-Type': 'application/json' },
                       body: JSON.stringify({ command: 'chrome' })
